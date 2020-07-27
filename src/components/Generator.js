@@ -22,7 +22,6 @@ const Generator = () => {
   const [btnBorder, setBtnBorder] = useState("1");
   const [btnRadius, setBtnRadius] = useState("1");
   const [slider, setSlider] = useState("16");
-  const [generate, setGenerate] = useState(false);
 
   // HANDLERS
   const handleTxt = (e) => setLable(e.target.value);
@@ -39,7 +38,6 @@ const Generator = () => {
   const modifySlider = () => (btn.style.fontSize = `${slider}px`);
   const modifyBorder = () =>
     (btn.style.border = `${btnBorder}rem solid ${color}`);
-  const handleGenerate = () => setGenerate(!generate);
 
   // RENDER
   return (
@@ -93,7 +91,7 @@ const Generator = () => {
             })}
           </select>
           <button onClick={modifyBgColor} type="button">
-            MODIFY
+            SHOW CHANGES
           </button>
         </div>
 
@@ -110,7 +108,7 @@ const Generator = () => {
             })}
           </select>
           <button onClick={modifyTxtColor} type="button">
-            MODIFY
+            SHOW CHANGES
           </button>
         </div>
 
@@ -127,7 +125,7 @@ const Generator = () => {
             onFocus={(e) => (e.target.value = "")}
           />
           <button onClick={modifyPadding} type="button">
-            MODIFY
+            SHOW CHANGES
           </button>
 
           {/* MODIFY BTN RADIUS */}
@@ -143,7 +141,7 @@ const Generator = () => {
               onFocus={(e) => (e.target.value = "")}
             />
             <button onClick={modifyRadius} type="button">
-              MODIFY
+              SHOW CHANGES
             </button>
 
             {/* TOGGLE BORDERS */}
@@ -159,24 +157,21 @@ const Generator = () => {
                 onFocus={(e) => (e.target.value = "")}
               />
               <button onClick={modifyBorder} type="button">
-                MODIFY
+                SHOW CHANGES
               </button>
             </div>
 
             {/*  GENERATE CSS CODE */}
             <div>
-              <button onClick={handleGenerate}>GENERATE CSS CODE</button>
               <div>
-                {generate ? (
-                  <Code
-                    fontSize={slider}
-                    backgroundColor={bgColor}
-                    color={color}
-                    padding={btnPadding}
-                    radius={btnRadius}
-                    border={btnBorder}
-                  />
-                ) : null}
+                <Code
+                  fontSize={slider}
+                  backgroundColor={bgColor}
+                  color={color}
+                  padding={btnPadding}
+                  radius={btnRadius}
+                  border={btnBorder}
+                />
               </div>
             </div>
           </div>

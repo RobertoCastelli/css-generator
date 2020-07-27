@@ -4,16 +4,21 @@ const Code = (props) => {
   return (
     <div>
       <h3>CSS CODE</h3>
-      <code>
-        <div>font-size: {props.fontSize};</div>
-        <div>background-color: {props.backgroundColor};</div>
-        <div>color: {props.color};</div>
-        <div>padding: {props.padding};</div>
-        <div>border-radius: {props.radius};</div>
-        <div>
-          border: {props.border}rem solid {props.color};
-        </div>
-      </code>
+      <pre>
+        <code>
+          <div>button &#123;</div>
+          <div> font-size: {props.fontSize};</div>
+          <div> background-color: {props.backgroundColor};</div>
+          <div> color: {props.color};</div>
+          <div> padding: {props.padding}rem;</div>
+          <div> border-radius: {props.radius}rem;</div>
+          <div>
+            {" "}
+            border: {props.border}rem solid {props.color};
+          </div>
+          <div>&#125;</div>
+        </code>
+      </pre>
     </div>
   );
 };
