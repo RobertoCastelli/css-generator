@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 const Generator = () => {
+  const colors = ["green", "red", "blue", "yellow", "orange"];
+
   const btn = document.getElementById("btn");
   const [lable, setLable] = useState("Demo");
   const [bgColor, setBgColor] = useState("");
@@ -48,9 +50,9 @@ const Generator = () => {
           <label htmlFor="bg-color">background colour </label>
 
           <select onChange={handleBgColor} value={bgColor}>
-            <option value="red">red</option>
-            <option value="blue">blue</option>
-            <option value="green">green</option>
+            {colors.map((color) => {
+              return <option value={color}>{color}</option>;
+            })}
           </select>
           <button onClick={modifyBgColor} type="button">
             MODIFY
@@ -60,14 +62,11 @@ const Generator = () => {
         {/* MODIFY TXT COLOR */}
         <div className="modify-txt-color">
           <label htmlFor="txt-color">text colour </label>
-          <input
-            value={color}
-            name="txt-color"
-            type="text"
-            placeholder="i.e. cadetblue"
-            onChange={handleTxtColor}
-            onFocus={(e) => (e.target.value = "")}
-          />
+          <select onChange={handleTxtColor} value={color}>
+            {colors.map((color) => {
+              return <option value={color}>{color}</option>;
+            })}
+          </select>
           <button onClick={modifyTxtColor} type="button">
             MODIFY
           </button>
