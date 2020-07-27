@@ -45,6 +45,30 @@ select {
   margin: 1rem;
 }
 
-footer {
+span {
+  color: cadetblue;
+}
+
+footer,
+h1 {
   text-align: center;
+}
+
+code {
+  display: block;
+  background: #333333;
+  color: #f4f4f4;
+  padding: 1rem;
+}
+
+.slider {
+  margin: 0 2rem;
+  padding: 0;
+
+  background: cadetblue !important;
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  cursor: pointer;
 }
