@@ -3,7 +3,6 @@ import React from "react";
 const Code = (props) => {
   return (
     <div>
-      <h3>CSS CODE</h3>
       <pre>
         <code>
           <div>button &#123;</div>

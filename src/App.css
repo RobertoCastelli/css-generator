@@ -11,9 +11,23 @@
   flex-grow: 1;
 }
 
+.panel {
+  margin-top: 1rem;
+}
+
+h1,
+span {
+  color: cadetblue;
+}
+
+h1,
+footer {
+  text-align: center;
+}
+
 input {
   border: none;
-  border-bottom: 1px solid cadetblue;
+  border-bottom: 2px solid cadetblue;
   margin: 1rem;
   padding: 0.5rem;
 }
@@ -25,7 +39,7 @@ input:focus {
 
 input[type="number"] {
   width: 4rem;
-  border: 1px solid cadetblue;
+  border: 2px solid cadetblue;
   border-radius: 0.5rem;
 }
 
@@ -37,21 +51,19 @@ fieldset {
   border: 2px solid cadetblue;
 }
 
+legend {
+  color: #333333;
+  font-weight: bold;
+  padding: 0 1rem;
+}
+
 select {
-  padding: 0.3rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
+  border: 2px solid cadetblue;
   background-color: white;
   outline: none;
   margin: 1rem;
-}
-
-span {
-  color: cadetblue;
-}
-
-footer,
-h1 {
-  text-align: center;
 }
 
 code {
@@ -64,7 +76,6 @@ code {
 .slider {
   margin: 0 2rem;
   padding: 0;
-
   background: cadetblue !important;
   outline: none;
 }

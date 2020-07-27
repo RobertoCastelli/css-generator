@@ -47,11 +47,9 @@ const Generator = () => {
         <button id="btn">{lable}</button>
       </fieldset>
       <div className="panel">
-        <h3>CONTROL PANEL</h3>
-
         {/* MODIFY TEXT */}
         <div className="modify-text">
-          <label htmlFor="btn-text">button label </label>
+          <label htmlFor="btn-text">label </label>
           <input
             name="btn-text"
             type="text"
@@ -60,7 +58,6 @@ const Generator = () => {
             onFocus={(e) => (e.target.value = "")}
           />
         </div>
-
         {/* MODIFY SLIDER */}
         <div className="slider-container">
           <label htmlFor="slider">font size </label>
@@ -76,7 +73,6 @@ const Generator = () => {
             value={slider}
           />
         </div>
-
         {/* MODIFY BG COLOR */}
         <div className="modify-bg-color">
           <label htmlFor="bg-color">background colour </label>
@@ -94,7 +90,6 @@ const Generator = () => {
             SHOW CHANGES
           </button>
         </div>
-
         {/* MODIFY TXT COLOR */}
         <div className="modify-txt-color">
           <label htmlFor="txt-color">text colour </label>
@@ -111,7 +106,6 @@ const Generator = () => {
             SHOW CHANGES
           </button>
         </div>
-
         {/* MODIFY BTN PADDING */}
         <div className="modify-padding">
           <label htmlFor="btn-padding">padding (rem) </label>
