@@ -5,27 +5,32 @@ const Generator = () => {
   const [lable, setLable] = useState("Demo");
   const [bgColor, setBgColor] = useState("");
   const [color, setColor] = useState("");
-  const [btnWidth, setBtnWidth] = useState("");
-  const [btnHeight, setBtnHeight] = useState("");
+  const [btnPadding, setbtnPadding] = useState("");
   const [btnBorder, setBtnBorder] = useState("");
+  const [btnRadius, setBtnRadius] = useState("");
 
   const handleTxt = (e) => setLable(e.target.value);
   const handleBgColor = (e) => setBgColor(e.target.value);
   const modifyBgColor = () => (btn.style.backgroundColor = `${bgColor}`);
   const handleTxtColor = (e) => setColor(e.target.value);
   const modifyTxtColor = () => (btn.style.color = `${color}`);
-  const handleWidth = (e) => setBtnWidth(e.target.value);
-  const modifyWidth = () => (btn.style.width = `${btnWidth}rem`);
-  const handleHeight = (e) => setBtnHeight(e.target.value);
-  const modifyHeight = () => (btn.style.height = `${btnHeight}rem`);
+  const handlePadding = (e) => setbtnPadding(e.target.value);
+  const modifyPadding = () => (btn.style.padding = `${btnPadding}rem`);
   const handleBorder = (e) => setBtnBorder(e.target.value);
+  const handleRadius = (e) => setBtnRadius(e.target.value);
+  const modifyRadius = () => (btn.style.borderRadius = `${btnRadius}rem`);
+
   const modifyBorder = () =>
     (btn.style.border = `${btnBorder}rem solid ${color}`);
 
   return (
-    <div>
-      <button id="btn">{lable}</button>
-      <div className="content">
+    <div className="content">
+      <fieldset>
+        <legend htmlFor="btn">BUTTON PREVIEW</legend>
+        <button id="btn">{lable}</button>
+      </fieldset>
+      <div className="panel">
+        <h3>CONTROL PANEL</h3>
         {/* MODIFY TEXT */}
         <div className="modify-text">
           <label htmlFor="btn-text">button label </label>
@@ -41,14 +46,12 @@ const Generator = () => {
         {/* MODIFY BG COLOR */}
         <div className="modify-bg-color">
           <label htmlFor="bg-color">background colour </label>
-          <input
-            value={bgColor}
-            name="bg-color"
-            type="text"
-            placeholder="i.e. red"
-            onChange={handleBgColor}
-            onFocus={(e) => (e.target.value = "")}
-          />
+
+          <select onChange={handleBgColor} value={bgColor}>
+            <option value="red">red</option>
+            <option value="blue">blue</option>
+            <option value="green">green</option>
+          </select>
           <button onClick={modifyBgColor} type="button">
             MODIFY
           </button>
@@ -61,7 +64,7 @@ const Generator = () => {
             value={color}
             name="txt-color"
             type="text"
-            placeholder="i.e. red"
+            placeholder="i.e. cadetblue"
             onChange={handleTxtColor}
             onFocus={(e) => (e.target.value = "")}
           />
@@ -70,54 +73,54 @@ const Generator = () => {
           </button>
         </div>
 
-        {/* MODIFY BTN WIDTH */}
-        <div className="modify-width">
-          <label htmlFor="btn-width">width (rem) </label>
+        {/* MODIFY BTN PADDING */}
+        <div className="modify-padding">
+          <label htmlFor="btn-padding">padding (rem) </label>
           <input
-            value={btnWidth}
-            name="btn-width"
-            type="number"
-            min="0"
-            placeholder="i.e. 16"
-            onChange={handleWidth}
-            onFocus={(e) => (e.target.value = "")}
-          />
-          <button onClick={modifyWidth} type="button">
-            MODIFY
-          </button>
-        </div>
-
-        {/* MODIFY BTN HEIGHT */}
-        <div className="modify-Height">
-          <label htmlFor="btn-height">hieght (rem) </label>
-          <input
-            value={btnHeight}
+            value={btnPadding}
             name="btn-height"
             type="number"
             min="0"
-            placeholder="i.e. 16"
-            onChange={handleHeight}
+            placeholder="i.e. 2"
+            onChange={handlePadding}
             onFocus={(e) => (e.target.value = "")}
           />
-          <button onClick={modifyHeight} type="button">
+          <button onClick={modifyPadding} type="button">
             MODIFY
           </button>
 
-          {/* TOGGLE BORDERS */}
-          <div className="btn-border">
-            <label htmlFor="btn-border">borders </label>
+          {/* MODIFY BTN RADIUS */}
+          <div className="modify-radius">
+            <label htmlFor="btn-radius">radius (rem) </label>
             <input
-              value={btnBorder}
-              name="btn-border"
+              value={btnRadius}
+              name="btn-radius"
               type="number"
               min="0"
-              placeholder="i.e. 16"
-              onChange={handleBorder}
+              placeholder="i.e. 1"
+              onChange={handleRadius}
               onFocus={(e) => (e.target.value = "")}
             />
-            <button onClick={modifyBorder} type="button">
+            <button onClick={modifyRadius} type="button">
               MODIFY
             </button>
+
+            {/* TOGGLE BORDERS */}
+            <div className="btn-border">
+              <label htmlFor="btn-border">borders (rem) </label>
+              <input
+                value={btnBorder}
+                name="btn-border"
+                type="number"
+                min="0"
+                placeholder="i.e. 11"
+                onChange={handleBorder}
+                onFocus={(e) => (e.target.value = "")}
+              />
+              <button onClick={modifyBorder} type="button">
+                MODIFY
+              </button>
+            </div>
           </div>
         </div>
       </div>

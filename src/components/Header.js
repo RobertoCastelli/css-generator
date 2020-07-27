@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   return (
     <div>
-      <h1>Button Generator CSS</h1>
+      <h1>CSS BUTTON GENERATOR</h1>
     </div>
   );
 };
