@@ -87,7 +87,7 @@ const Generator = () => {
             })}
           </select>
           <button onClick={modifyBgColor} type="button">
-            SHOW CHANGES
+            CHANGE
           </button>
         </div>
         {/* MODIFY TXT COLOR */}
@@ -103,7 +103,7 @@ const Generator = () => {
             })}
           </select>
           <button onClick={modifyTxtColor} type="button">
-            SHOW CHANGES
+            CHANGE
           </button>
         </div>
         {/* MODIFY BTN PADDING */}
@@ -119,7 +119,7 @@ const Generator = () => {
             onFocus={(e) => (e.target.value = "")}
           />
           <button onClick={modifyPadding} type="button">
-            SHOW CHANGES
+            CHANGE
           </button>
 
           {/* MODIFY BTN RADIUS */}
@@ -135,7 +135,7 @@ const Generator = () => {
               onFocus={(e) => (e.target.value = "")}
             />
             <button onClick={modifyRadius} type="button">
-              SHOW CHANGES
+              CHANGE
             </button>
 
             {/* TOGGLE BORDERS */}
@@ -151,7 +151,7 @@ const Generator = () => {
                 onFocus={(e) => (e.target.value = "")}
               />
               <button onClick={modifyBorder} type="button">
-                SHOW CHANGES
+                CHANGE
               </button>
             </div>
 
